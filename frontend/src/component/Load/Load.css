@@ -1,0 +1,39 @@
+
+@keyframes ldio-ayasitzj16p {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(180deg) }
+  100% { transform: rotate(360deg) }
+}
+.ldio-ayasitzj16p div {
+  position: absolute;
+  animation: ldio-ayasitzj16p 1s linear infinite;
+  width: 157.6px;
+  height: 157.6px;
+  top: 19.7px;
+  left: 19.7px;
+  border-radius: 50%;
+  box-shadow: 0 3.94px 0 0 #75c7f0;
+  transform-origin: 78.8px 80.77px;
+}
+.loadingio-spinner-eclipse-k3xi7ttp0je {
+  width: 197px;
+  height: 197px;
+  display: inline-block;
+  overflow: hidden;
+}
+.ldio-ayasitzj16p {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-ayasitzj16p div { box-sizing: content-box; }
+
+.__loadContent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

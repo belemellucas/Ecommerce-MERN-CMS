@@ -7,7 +7,94 @@ const cloudinary = require("cloudinary");
  
 
 
+/* shopify
+// webhook shopify
+exports.webhookShopify = catchAsyncErrors(async (req, res, next) => {
+  productsWebhook()
+  
+  function productsWebhook(){
+    const products = {
+        _id: req.body.id
+    }
+     //const userId = webhookData.user_id;
+  
+    Product.findOne(products, (error, result) =>{
+        if(error) {
+            return console.log('Erro')
+        }
+        if(result) {
+            console.log('produto já existe',result)
+        } else {
+            addProducts()
+            async function addProducts(){
+                await axios.post('http://localhost:4000/api/v1/admin/product/new', products);
+              
+            }
+        }
+    })
+  }
+})  
 
+// products shopify
+exports.getProductsShopify = catchAsyncErrors(async (req, res, next ) => {
+    
+    let request = require('request')
+
+    let endpoint = 'products'
+    
+    let options = { 
+        'method': 'GET',
+        'url': `https://${apiKey}:${tokenAdmin}@akasha-technology-6995.myshopify.com/admin/api/2023-01/${endpoint}.json`,
+        'headers': {
+            'Content-type': 'application/json'
+        }
+    }
+
+    request(options, function (error, response) {
+        if (error) throw new Error(error);
+        const resposta = JSON.parse(response.body); 
+        const products = resposta.products;
+
+       for(let i =0; i < products.length; i++){
+           const addProduct = new Product({
+                _id: products[i]['id']
+            })
+            addProduct.save();
+        }
+        res.status(201).json({
+            success: true, 
+            products
+        }); 
+    });
+
+});  
+
+// Create Product Shopify
+exports.createProduct = catchAsyncErrors(async (req, res, next) => {
+    
+    let request = require('request')
+
+    let endpoint = 'products'
+    
+    let options = { 
+        'method': 'POST',
+        'url': `https://${apiKey}:${tokenAdmin}@akasha-technology-6995.myshopify.com/admin/api/2023-01/${endpoint}.json`,
+        'headers': {
+            'Content-type': 'application/json'
+        }
+    }
+    let products;
+    request(options, function (error, response) {
+        if (error) throw new Error(error);
+         products = response.body; 
+    })
+    for(let i =0; i < products.length; i++) {
+        const addproducts = new Product({
+           _id: products[i]['id']
+        });
+        addproducts.save();
+    }
+}) */
 
 // Create Product -- Admin -- Old
 
